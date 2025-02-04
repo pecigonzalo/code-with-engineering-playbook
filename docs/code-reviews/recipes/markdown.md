@@ -46,23 +46,6 @@ markdownlint **/*.md --ignore node_modules --fix
 
 A comprehensive list of markdownlint rules is available [here](https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md).
 
-### proselint
-
-[`proselint`](http://proselint.com/) is a command line utility that lints the text contents of the document.  It checks for jargon, spelling errors, redundancy, corporate speak and other language related issues.
-
-It's available both as a [python package](https://github.com/amperser/proselint/#checks) and a [node package](https://www.npmjs.com/package/proselint).
-
-```bash
-pip install proselint
-npm install -g proselint
-```
-
-Run proselint
-
-```bash
-proselint document.md
-```
-
 ### write-good
 
 [`write-good`](https://github.com/btford/write-good) is a linter for English text that helps writing better documentation.
@@ -85,13 +68,13 @@ npx write-good *.md
 
 Write Good is also available as an [extension for VS Code](https://marketplace.visualstudio.com/items?itemName=travisthetechie.write-good-linter)
 
-## VS Code Extensions
+## VSCode Extensions
 
 ### Write Good Linter
 
 The [`Write Good Linter Extension`](https://marketplace.visualstudio.com/items?itemName=travisthetechie.write-good-linter) integrates with VS Code to give grammar and language advice while editing the document.
 
-### markdownlint extension
+### markdownlint Extension
 
 The [`markdownlint extension`](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) examines the Markdown documents, showing warnings for rule violations while editing.
 
@@ -132,17 +115,19 @@ jobs:
 
 ### Checking Links
 
-To automate link check in your markdown files add `markdown-link-check` action to your validation pipeline:
+To automate link check in your markdown files add `lycheeverse/lychee-action` action to your validation pipeline:
 
 ```yaml
   markdown-link-check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@master
-    - uses: gaurav-nelson/github-action-markdown-link-check@v1
+    - uses: actions/checkout@v4
+    - name: Link Checker
+      id: lychee
+      uses: lycheeverse/lychee-action@v2
 ```
 
-More information about `markdown-link-check` action options can be found at [`markdown-link-check` home page](https://github.com/gaurav-nelson/github-action-markdown-link-check)
+More information about this action options can be found at [`lychee-action` home page](https://github.com/lycheeverse/lychee-action).
 
 ## Code Review Checklist
 
@@ -183,12 +168,12 @@ Save your guidelines together with your documentation, so they are easy to refer
 - Avoid using symbols and special characters in headers, this causes problems with anchor links
 - Avoid links in headers
 
-### Links
+### Resources
 
 - Avoid duplication of content, instead link to the `single source of truth`
 - Link but don't summarize. Summarizing content on another page leads to the content living in two places
 - Use meaningful anchor texts, e.g. instead of writing `Follow the instructions [here](../recipes/markdown.md)` write `Follow the [Markdown guidelines](../recipes/markdown.md)`
-- Make sure links to Microsoft docs (like `https://learn.microsoft.com/something/somethingelse`) do not contain the language marker `/en-us/` or `/fr-fr/`, as this is automatically determined by the site itself.
+- Make sure links to Microsoft docs do not contain the language marker `/en-us/` or `/fr-fr/`, as this is automatically determined by the site itself.
 
 ### Lists
 
@@ -203,7 +188,7 @@ Save your guidelines together with your documentation, so they are easy to refer
 - Name images appropriately, avoiding generic names like `screenshot.png`
 - Avoid adding large images or videos to source control, link to an external location instead
 
-### Emphasis and special sections
+### Emphasis and Special Sections
 
 - Use **bold** or _italic_ to emphasize
   > For sections that everyone reading this document needs to be aware of, use blocks

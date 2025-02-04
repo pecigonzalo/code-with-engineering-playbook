@@ -13,11 +13,11 @@ This in turn results in the following benefits:
 
 ## Measures
 
-The metrics and/or KPIs used for design reviews overall would still apply. See [design reviews](../README.md#Measures) for measures guidance.
+The metrics and/or KPIs used for design reviews overall would still apply. See [design reviews](../README.md#measures) for measures guidance.
 
 ## Participation
 
-The participation should be same as any design review. See [design reviews](../README.md#Participation) for participation guidance.
+The participation should be same as any design review. See [design reviews](../README.md#participation) for participation guidance.
 
 ## Facilitation Guidance
 
@@ -33,7 +33,7 @@ Design documentation must live in a source control repository that supports pull
 2. If the documentation represents code that lives in many different repositories, it may make more sense to keep the docs in their own repository.
 3. Place the docs so that they do not trigger CI builds for the affected code (assuming the documentation was the only change). This can be done by placing them in an isolated directory should they live alongside the code they represent. See directory structure example below.
 
-```text
+```sh
 -root
   --src
   --docs <-- exclude from ci build trigger

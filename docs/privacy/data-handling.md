@@ -18,30 +18,26 @@ Developers working on ISE projects should implement best practices and guidance 
 - [Limited Data Protection Addendum](https://aka.ms/mpsldpa)
 - [Professional Services Data Protection Addendum](https://www.microsoft.com/licensing/docs/view/Microsoft-Products-and-Services-Data-Protection-Addendum-DPA)
 
-## 5 W's of data handling
+## 5 W's of Data Handling
 
 When working on an engagement it is important to address the following 5 **W**'s:
 
 - **Who** – gets access to and with whom will we share the data and/or models developed with the data?
-
 - **What** – data is shared with us and under what expectations and understanding.
 Customers need to be explicit about how the data they share applies to the overarching effort.
 The understanding shouldn't be vague and we shouldn't have access to broad set of data if not necessary.
-
 - **Where** – will the data be stored and what legal jurisdiction will preside over that data.
 This is particularly important in countries like Germany, where different privacy laws apply
 but also important when it comes to responding to legal subpoenas for the data.
-
 - **When** – will the access to data be provided and for how long?
 It is important to not leave straggling access to data once the engagement is completed, and define a priori the data retention policies.
-
 - **Why** – have you given access to the data?
 This is particularly important to clarify the purpose and any restrictions on usage beyond the intended purpose.
 
 Please use the above guidelines to ensure the data is used only for intended purposes and thereby gain trust.
 It is important to be aware of data handling best practices and ensure the required clarity is provided to adhere to the above 5Ws.
 
-## Handling data in ISE engagements
+## Handling Data in ISE Engagements
 
 Data should never leave customer-controlled environments and contractors and/or other members in the engagement
 should never have access to complete customer data sets but use limited customer data sets using the following prioritized approaches:
@@ -67,7 +63,7 @@ Customers should provide ISE with a copy of the requested data in a location man
 The customer should consider turning any logging capabilities on so they can clearly identify who has access and what they do with that access.
 ISE should notify the customer when they are done with the data and suggest the customer destroy copies of the data if they are no longer needed.
 
-### Our guiding principles when handling data in an engagement
+### Our Guiding Principles when Handling Data in an Engagement
 
 - Never directly access production data.
 - Explicitly state the intended purpose of data that can be used for engagement.
@@ -77,7 +73,7 @@ the team should promptly work to clean up engagement copies of data.
 - Do not send any copies of the production data outside the customer-controlled environment.
 - Only use the minimal subset of the data needed for the purpose of the engagement.
 
-### Questions to consider when working with data
+### Questions to Consider when Working with Data
 
 - What data do we need?
 - What is the legal basis for processing this data?
@@ -99,9 +95,9 @@ It is important to only pull in data that is needed for the problem at hand,
 when this is put in practice we find that we only maintain data that is adequate,
 relevant and limited to what is necessary in relation to the purposes for which they are processed.
 This is particularly important for personal data. Once you have personal data there are many rules and regulations that apply,
-some examples of these might be HIPPA, GDPR, CCPA.
+some examples of these might be HIPAA, GDPR, CCPA.
 The customer should be aware of and surface any applicable regulations that apply to their data.
-Furthermore the [seven principles of privacy by design](https://privacy.ucsc.edu/resources/privacy-by-design---foundational-principles.pdf)
+Furthermore the [seven principles of privacy by design](https://www.onetrust.com/blog/principles-of-privacy-by-design/)
 should be reviewed and considered when handling any type of sensitive data.
 
 ## Resources
@@ -112,4 +108,4 @@ should be reviewed and considered when handling any type of sensitive data.
 - [FAQ and White Papers](https://servicetrust.microsoft.com/ViewPage/TrustDocuments?command=Download&docTab=6d000410-c9e9-11e7-9a91-892aae8839ad_AuditedControls)
 - [Microsoft Compliance Offerings](https://learn.microsoft.com/en-us/compliance/regulatory/offering-home?view=o365-worldwide)
 - [Accountability Readiness Checklists](https://learn.microsoft.com/en-us/compliance/regulatory/gdpr-arc?view=o365-worldwide#gdpr-compliance-controls)
-- [Privacy by Design The 7 Foundational Principles](https://privacy.ucsc.edu/resources/privacy-by-design---foundational-principles.pdf)
+- [Privacy by Design The 7 Foundational Principles](https://www.onetrust.com/blog/principles-of-privacy-by-design/)

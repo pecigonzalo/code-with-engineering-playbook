@@ -1,6 +1,6 @@
 # Fault Injection Testing
 
-Fault injection testing is the deliberate introduction of errors and faults to a system to validate and harden its [stability and reliability](../../reliability/README.md). The goal is to improve the system's design for resiliency and performance under intermittent failure conditions over time.
+Fault injection testing is the deliberate introduction of errors and faults to a system to validate and harden its [stability and reliability](../../non-functional-requirements/reliability.md). The goal is to improve the system's design for resiliency and performance under intermittent failure conditions over time.
 
 ## When To Use
 
@@ -29,7 +29,6 @@ Fault injection methods are a way to increase coverage and validate software rob
 * **Error** - That part of the system state that may cause a subsequent failure.
 * **Failure** - An event that occurs when the delivered service deviates from correct state.
 * **Fault-Error-Failure cycle** - A key mechanism in [dependability](https://en.wikipedia.org/wiki/Dependability): A fault may cause an error. An error may cause further errors within the system boundary; therefore each new error acts as a fault. When error states are observed at the system boundary, they are termed failures.
-(Modeled by [Laprie/Avizienis](https://www.nasa.gov/pdf/636745main_day_3-algirdas_avizienis.pdf))
 
 #### Fault Injection Testing Basics
 
@@ -39,7 +38,7 @@ Fault injection is an advanced form of testing where the system is subjected to 
 
 Fault injection testing is a specific approach to testing one condition. It introduces a failure into a system to validate its robustness. Chaos engineering, coined by Netflix, is a practice for generating new information. There is an overlap in concerns and often in tooling between the terms, and many times chaos engineering uses fault injection to introduce the required effects to the system.
 
-### High-level Step-by-step
+### High-level Step-by-Step
 
 #### Fault injection testing in the development cycle
 
@@ -53,7 +52,7 @@ Examples of performing fault injection during the development lifecycle:
 * Write regression and acceptance tests based on issues that were found and fixed or based on resolved service incidents.
 * Ad-hoc (manual) validations of fault in the dev environment for new features.
 
-#### Fault injection testing in the release cycle
+#### Fault Injection Testing in the Release Cycle
 
 Much like [Synthetic Monitoring Tests](../synthetic-monitoring-tests/README.md), fault injection testing in the release cycle is a part of [Shift-Right testing](https://learn.microsoft.com/en-us/devops/deliver/shift-right-test-production) approach, which uses safe methods to perform tests in a production or pre-production environment. Given the nature of distributed, cloud-based applications, it is very difficult to simulate the real behavior of services outside their production environment. Testers are encouraged to run tests where it really matters, on a live system with customer traffic.
 
@@ -66,7 +65,7 @@ Fault injection tests rely on metrics observability and are usually statistical;
 * Document the process and the observations.
 * Identify and act on the result.
 
-#### Fault injection testing in kubernetes
+#### Fault Injection Testing in Kubernetes
 
 With the advancement of kubernetes (k8s) as the infrastructure platform, fault injection testing in kubernetes has become inevitable to ensure that system behaves in a reliable manner in the event of a fault or failure. There could be different type of workloads running within a k8s cluster which are written in different languages. For eg. within a K8s cluster, you can run a micro service, a web app and/or a scheduled job. Hence you need to have mechanism to inject fault into any kind of workloads running within the cluster. In addition, kubernetes clusters are managed differently from traditional infrastructure. The tools used for fault injection testing within kubernetes should have compatibility with k8s infrastructure. These are the main characteristics which are required:
 
@@ -107,7 +106,7 @@ A test can either succeed or fail. In the event of failure, there will likely be
 * [Chaos Monkey](https://github.com/netflix/chaosmonkey) - The Netflix platform which popularized chaos engineering (doesn't support Azure OOTB).
 * [Simmy](https://github.com/Polly-Contrib/Simmy) - A .NET library for chaos testing and fault injection integrated with the [Polly](https://github.com/App-vNext/Polly) library for resilience engineering.
 * [Litmus](https://github.com/litmuschaos/litmus) - A CNCF open source tool for chaos testing and fault injection for kubernetes cluster.
-* [This ISE dev blog post](https://devblogs.microsoft.com/cse/2023/03/07/build-test-resilience-dotnet-functions/) provides code snippets as an example of how to use Polly and Simmy to implement a hypothesis-driven approach to resilience and chaos testing.
+* [This ISE dev blog post](https://devblogs.microsoft.com/ise/build-test-resilience-dotnet-functions/) provides code snippets as an example of how to use Polly and Simmy to implement a hypothesis-driven approach to resilience and chaos testing.
 
 ## Conclusion
 
